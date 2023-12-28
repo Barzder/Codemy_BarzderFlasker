@@ -1,0 +1,7 @@
+# ignore virtualenvironment:
+env/
+venv/
+__pycache__/
+*/__pycache__/
+
+config.yml
