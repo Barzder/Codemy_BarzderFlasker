@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if current_user.is_authenticated %}
+        <h1>Add Blog Post</h1>
+        <br/>
+        <div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.title.label(class="form-label") }}
+            {{ form.title(class="form-control") }}
+            <br/>
+            {{ form.slug.label(class="form-label") }}
+            {{ form.slug(class="form-control") }}
+            <br/>
+            {{ form.content.label(class="form-label") }}
+            {{ form.content(class="form-control", rows="15") }}
+            {{ ckeditor.load() }}
+            {{ ckeditor.config(name='content') }}
+            <br/>
+            {{ form.submit(class="btn btn-success") }}
+        </form>
+        </div>
+        <br/><br/><br/>
+    {% else %}
+        <h1>Login Required!</h1>
+        <br/>
+        <p>We are sorry, you have to log in to access this page.</p>
+        <br/>
+        <a href="{{ url_for('login') }}" class="btn btn-outline-info btn-sm">Login here</a>
+    {% endif %}
+{% endblock %}

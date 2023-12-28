@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Dashboard</h1>
+  <br/>
+  <div class="card">
+      <div class="card-header">
+          {{ current_user.name }}
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <p class="card-text">
+                <strong>Name: </strong>{{ current_user.name }}<br/>
+                <strong>Username: </strong>{{ current_user.username }}<br/>
+                <strong>User ID: </strong>{{ current_user.id }}<br/>
+                <strong>Email Address: </strong>{{ current_user.email }}<br/>
+                <strong>Favorite Color: </strong>{{ current_user.favorite_color }}<br/>
+                <strong>About Author: </strong>{{ current_user.about_author }}<br/>
+                <strong>Profile Picture: </strong>{{ current_user.profile_pic }}<br/>
+                <strong>Date Joined: </strong>{{ current_user.date_added }}<br/>
+              </p>
+              <div class="d-flex gap-3 d-md-flex">
+                <a href="{{ url_for('update', id=current_user.id) }}" class="btn btn-outline-secondary btn-sm">Update Profile</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-outline-info btn-sm">Logout</a>
+                <a href="{{url_for('delete_user', id=current_user.id)}}" class="btn btn-outline-danger btn-sm">Delete</a>
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="{{ url_for('static', filename='images/user_profile_pics/'+current_user.profile_pic) }}" width="200" align="right">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+{% endblock %}

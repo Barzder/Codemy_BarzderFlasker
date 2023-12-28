@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if name %}
+        <h1>Hello {{ name }}!</h1>
+        <br/>
+        <img src="{{ url_for('static', filename='images/investing_time_horizon.jpeg') }}" width="1000">
+        <br/><br/><br/>
+        <p id="demo">This is stuff...</p>
+        <script src="{{ url_for('static', filename='js/myfile.js') }}"></script>
+    {% else %}
+        <h1>What's your Name?</h1>
+        <br/>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{ form.name.label(class="form-label") }}
+            {{ form.name(class="form-control") }}
+            <br/>
+            {{ form.submit(class="btn btn-success") }}
+        </form> 
+    {% endif %}
+{% endblock %}

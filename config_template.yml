@@ -1,0 +1,8 @@
+---
+# Database connection
+configDatabaseConnection: 'enter_your_connector_here://enter_your_database_information_here'
+
+# Secret Key!
+configSecretKey: 'Enter your secret key here'
+
+...

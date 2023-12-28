@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br/>
+    <h2>Admin Area</h2>
+    <p>Do some Admin-y type things here....</p>
+    <div class="shadow p-3 mb-5 bg-body-tertiary rounded container-fluid">
+        {% for our_user in our_users %}
+        <div class="row">
+            <div class="col align-self-center">
+                <div class="row border rounded">
+                    <div class="col-2 align-self-center">
+                        <a>ID: {{ our_user.id }}</a><br/> 
+                        <a>Name: {{ our_user.name }}</a>
+                    </div>
+                    <div class="col align-self-center">        
+                        <div class="row border rounded" style="min-height: 35px;">
+                            <div class="col align-self-center">
+                            <div class="hstack gap-3">
+                            <div class="p2">
+                            {{ our_user.username }} - 
+                            {{ our_user.email }} - 
+                            {{ our_user.favorite_color }} - 
+                            {{ our_user.about_author }}
+                            </div>
+                            <div class="p2 ms-auto">
+                            <a href="#" class="btn btn-outline-secondary btn-sm">Reset Password</a>
+                            </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row border rounded" style="min-height: 35px;">
+                            <div class="col align-self-center">
+                                <div class="hstack gap-3">
+                                <div class="p2"><a>User is admin: {{ our_user.is_admin }}</a></div>
+                                <div class="p2 ms-2">    
+                                {% if our_user.is_admin == False %}
+                                    <a href="{{url_for('set_admin', id=our_user.id, RS='set')}}" class="btn btn-outline-secondary btn-sm">Set Admin</a>
+                                {% else %}
+                                    <a href="{{url_for('set_admin', id=our_user.id, RS='reset')}}" class="btn btn-outline-secondary btn-sm">Remove Admin</a>
+                                {% endif %}
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1 align-self-center" align="middle">
+                <div class="row-cols-auto align-self-center" style="min-height: 35px;">
+                    <a href="{{url_for('delete_user', id=our_user.id)}}" class="btn btn-outline-danger btn-sm">Delete</a>
+                </div>
+            </div>
+            <div class="row">
+                <a><br/></a>
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

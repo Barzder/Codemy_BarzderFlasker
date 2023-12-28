@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% if current_user.id == user_to_delete.id %}
+    <h1>Do you really want to delete your user account?</h1>
+  {% else %}
+    <h1>Do you really want to delete this user?</h1>
+  {% endif %}
+  <br/>
+  <div class="card">
+      <div class="card-header">
+          {{ user_to_delete.name }}
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <p class="card-text">
+                <strong>Name: </strong>{{ user_to_delete.name }}<br/>
+                <strong>Username: </strong>{{ user_to_delete.username }}<br/>
+                <strong>User ID: </strong>{{ user_to_delete.id }}<br/>
+                <strong>Email Address: </strong>{{ user_to_delete.email }}<br/>
+                <strong>Favorite Color: </strong>{{ user_to_delete.favorite_color }}<br/>
+                <strong>About Author: </strong>{{ user_to_delete.about_author }}<br/>
+                <strong>Profile Picture: </strong>{{ user_to_delete.profile_pic }}<br/>
+                <strong>Date Joined: </strong>{{ user_to_delete.date_added }}<br/>
+              </p>
+            </div>
+            <div class="col-4">
+              <img src="{{ url_for('static', filename='images/user_profile_pics/'+user_to_delete.profile_pic) }}" width="200" align="right">
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>    
+  <div class="container">
+    <div class="row">
+      <a><br/><br/></a>
+    </div>
+    <div class="row">
+      <h3>{% if current_user.id == user_to_delete.id %}You{% else %}This user{% endif %} will not be able to log into this website anymore.
+        {% if current_user.id == user_to_delete.id %}Your{% else %}The user{% endif %} account can not be restored.
+      </h3>
+    </div>
+    <div class="row-0">
+      <a></br></a>
+    </div>
+    <div class="row">
+      <div class="col-1" align="middle">
+        <a href="{% if current_user.id == user_to_delete.id %}{{url_for('dashboard')}}{% else %}{{url_for('admin')}}{% endif %}" class="btn btn-success">Back</a>
+      </div><div class="col-1" align="middle">
+        <a href="{{url_for('delete_user_confirmed', id=user_to_delete.id)}}" class="btn btn-outline-danger">Delete</a>
+      </div>
+    </div>
+{% endblock %}

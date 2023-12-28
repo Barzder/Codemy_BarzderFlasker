@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Blog Posts</h1><br/>   
+    {% for post in posts %}
+        <div class="shadow p-3 mb-5 bg-body-secondary rounded container-fluid">
+            <div class="row">
+                <div class="col">
+                <a><h2>{{ post.title }}</h2></a><br/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-3">
+                <small>Author: {{ post.poster.name }}<br/>
+                Posted On: {{ post.date_posted }}
+                </small><br/><br/>
+                <a href="{{ url_for('post', id=post.id, slug=post.slug) }}" class="btn btn-outline-info btn-sm">View Post</a>
+                </div>
+                <div class="col-9">
+                <div class="shadow p-3 mb-2 bg-body-tertiary rounded text-wrap text-truncate overflow-y-scroll" style="height: 100px; max-width: 100%;">{{ post.content|safe }}</div>
+                </div>
+            </div>
+        </div>
+    {% endfor %} 
+    <br/><br/><br/>
+{% endblock %}

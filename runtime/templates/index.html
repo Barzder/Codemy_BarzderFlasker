@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Hello to this Blog website!</h1>
+
+    <br/><br/>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>This webpage is was created to learn things!</h4>
+                <br/>
+                <p>The groundwork for this site was created following the tutorial series from Codemy:</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-7">
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/videoseries?si=3M9k5v6Wzp5iElhk&amp;list=PLCC34OHNcOtolz2Vd9ZSeSXWc8Bq23yEz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div><br/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p>I have changed quite a few things to my liking and to learn specific things.</p>
+                <h4>Feel free to check out the current state!</h>
+        
+                <!--
+                <h3>Favorite Pizza:</h3>
+
+                {% for topping in favorite_pizza %}
+                    {% if topping == 42 %}
+                        {{ topping + 100 }}</br>
+                    {% else %}
+                        {{ topping }}</br>
+                    {% endif %}
+                {% endfor %}
+                -->
+            </div>
+        </div>
+    </div>
+    </br></br>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>About Author from Post: {{ post.title }}</h1>
+  <br/>
+  <div class="card">
+      <div class="card-header">
+          {{ post.poster.name }}
+      </div>
+      <div class="card-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-8">
+              <p class="card-text">
+                <strong>Name: </strong>{{ post.poster.name }}<br/>
+                <strong>Username: </strong>{{ post.poster.username }}<br/>
+                <strong>User ID: </strong>{{ post.poster.id }}<br/>
+                <strong>Email Address: </strong>{{ post.poster.email }}<br/>
+                <strong>Favorite Color: </strong>{{ post.poster.favorite_color }}<br/>
+                <strong>About Author: </strong>{{ post.poster.about_author }}<br/>
+                <strong>Profile Picture: </strong>{{ post.poster.profile_pic }}<br/>
+                <strong>Date Joined: </strong>{{ post.poster.date_added }}<br/>
+              </p>
+              <a href="{{ url_for('post', id=post.id, slug=post.slug) }}" class="btn btn-outline-info btn-sm">Back to Post</a>
+            </div>
+            <div class="col-4">
+              <img src="{{ url_for('static', filename='images/user_profile_pics/'+post.poster.profile_pic) }}" width="200" align="right">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>    
+{% endblock %}

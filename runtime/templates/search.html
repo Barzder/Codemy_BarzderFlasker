@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br/>
+    <h2>You searched for: <em>{{ searched }}</em></h2>
+    <br/>
+    {% if posts %}
+        {% for post in posts %}
+            <div class="shadow p-3 mb-5 bg-body-secondary rounded container-fluid">
+                <div class="row">
+                    <div class="col">
+                    <a><h2>{{ post.title }}</h2></a><br/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-3">
+                    <small>Author: {{ post.poster.name }}<br/>
+                    Posted on: {{ post.date_posted }}
+                    </small><br/><br/>
+                    <a href="{{ url_for('post', id=post.id, slug=post.slug) }}" class="btn btn-outline-info btn-sm">View Post</a>
+                    </div>
+                    <div class="col-9">
+                    <div class="shadow p-3 mb-2 bg-body-tertiary rounded text-wrap text-truncate overflow-y-scroll" style="height: 100px; max-width: 100%;">{{ post.content|safe }}</div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %} 
+    {% else %}
+        <p>No posts were found containing your search term: <em>{{ searched }}</em></p>
+    {% endif %}
+{% endblock %}
