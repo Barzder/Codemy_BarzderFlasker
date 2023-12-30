@@ -38,7 +38,7 @@
           <a class="nav-link" href="{{ url_for('posts') }}">Posts</a>
         </li>
       </ul>
-      <ul class="navbar-nav me-3   mb-2 mb-lg-0">
+      <ul class="navbar-nav me-3 mb-2 mb-lg-0">
         {% if current_user.is_admin == True %}
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('admin') }}">Admin</a>
@@ -50,7 +50,7 @@
         {{ searchform.searched(class="form-control me-2", placeholder="Search") }}
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
-      <ul class="navbar-nav me-1 mb-0">
+      <ul class="darktoggledesktop me-1 mb-0">
         <li class="nav-item">
           <button id="themebtn" data-bs-theme-value="light" class="btn btn-sm btn-light"><span class="material-symbols-outlined">light_mode</span></button>
         </li>

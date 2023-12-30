@@ -20,6 +20,9 @@ flex-shrink: 0;
 }
 
 @media (max-width: 991px) {
+    .darktoggledesktop{
+        display: none;
+    }
     .darktogglemobile{
         display: block;
     }
