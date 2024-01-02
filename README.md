@@ -27,11 +27,10 @@ https://www.youtube.com/embed/videoseries?si=3M9k5v6Wzp5iElhk&amp;list=PLCC34OHN
 * source venv/bin/activate
 * pip install -r requirements.txt
   
-* I am using a MariaDB database running on another server. This implementation is not to easy, as there are additional steps to be taken apart from "pip install" a mariaDB package.
-The requirements.txt does not hold the packages for the mariaDB connection. Feel free to use a different SQL DB and search the internet for your solution and install the required packages for your DB.
+* The requirements.txt does not hold the packages for the DB connection. You will have to install the required packages for the DB of your choice.
 
 * There is a YAML file, where a secret key and the database connection has to be set by yourself once.
 Copy the "config_template.yml" to "config.yml" and enter your personal data in that file.
-The "config.yml" file is part of the ".gitignore" file and will not be uploaded to git.
+The "config.yml" file is listed in the ".gitignore" file and will not be uploaded to git.
 
-* flask run ( with --debug if you want changes to the app while developing to update automatically)
+* flask run --debug while developing or deploy it on a server with the fitting tools and third party apps.
