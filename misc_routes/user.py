@@ -1,6 +1,6 @@
 from flask import render_template
 
-from runtime import app
+from app import app
 
 # localhost:5000/user/john
 @app.route('/user/<name>')

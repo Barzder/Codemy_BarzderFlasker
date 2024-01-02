@@ -1,6 +1,6 @@
 from flask import render_template, flash
 
-from runtime import app
+from app import app
 from webforms.namer_form import NamerForm
 
 # Create Name Page

@@ -1,7 +1,7 @@
 from flask import render_template, redirect, flash, url_for
 from flask_login import login_required, current_user
 
-from runtime import app
+from app import app
 from models import db
 from webforms.post_form import PostForm
 from models.posts import Posts

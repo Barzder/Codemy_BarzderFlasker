@@ -1,7 +1,7 @@
 from flask import redirect, url_for, flash
 from flask_login import login_required, logout_user
 
-from runtime import app
+from app import app
 
 # Logout Page
 @app.route('/logout', methods=['GET', 'POST'])

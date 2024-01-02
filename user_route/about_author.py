@@ -1,7 +1,7 @@
 from flask import redirect, render_template
 from flask_login import current_user
 
-from runtime import app
+from app import app
 from models.posts import Posts
 
 # Dashboard

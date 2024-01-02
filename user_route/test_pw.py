@@ -2,7 +2,7 @@ from flask import render_template
 from flask_login import login_required, current_user
 from werkzeug.security import check_password_hash
 
-from runtime import app
+from app import app
 from webforms.password_form import PasswordForm
 from models.users import Users
 

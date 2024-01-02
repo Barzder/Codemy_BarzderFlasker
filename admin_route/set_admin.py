@@ -1,7 +1,7 @@
 from flask import redirect, flash, render_template
 from flask_login import current_user
 
-from runtime import app
+from app import app
 from models import db
 from models.users import Users
 

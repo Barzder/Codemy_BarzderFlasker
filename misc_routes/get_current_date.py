@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from runtime import app
+from app import app
 
 # JSON integration
 @app.route('/date')

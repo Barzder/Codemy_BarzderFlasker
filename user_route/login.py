@@ -2,7 +2,7 @@ from flask import render_template, flash, redirect, url_for
 from flask_login import login_user
 from werkzeug.security import check_password_hash
 
-from runtime import app
+from app import app
 from webforms.login_form import LoginForm
 from models.users import Users
 

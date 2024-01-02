@@ -1,6 +1,6 @@
 from flask import render_template
 
-from runtime import app
+from app import app
 from webforms.search_form import SearchForm
 from models.posts import Posts
 

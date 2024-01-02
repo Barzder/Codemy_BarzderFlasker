@@ -5,7 +5,7 @@ from werkzeug.utils import secure_filename
 import uuid as uuid
 import os
 
-from runtime import app
+from app import app
 from models import db
 from webforms.user_form import UserForm
 from models.users import Users

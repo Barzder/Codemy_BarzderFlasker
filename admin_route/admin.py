@@ -1,7 +1,7 @@
 from flask import redirect, render_template
 from flask_login import login_required, current_user
 
-from runtime import app
+from app import app
 from models.users import Users
 
 # Admin Page
